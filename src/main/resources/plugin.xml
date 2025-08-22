@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.example.oxygenplugin"
+        name="文档加锁与版本自动升级插件"
+        version="1.0.0"
+        vendor="YourCompany"
+        description="支持文档加锁/解锁、topic 修改自动升级 map 版本号、统一提交等功能的 Oxygen 插件。">
+    <runtime>
+        <library name="${plugin.dir}/your-plugin-name.jar"/>
+    </runtime>
+    <extension class="com.example.oxygenplugin.MainExtensionBundle"/>
+</plugin>

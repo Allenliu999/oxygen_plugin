@@ -1,0 +1,33 @@
+<documentTypeAssociation
+    id="custom.ditamap"
+    name="自定义 DITA Map 扩展"
+    description="为 DITA map 文件添加加锁/解锁按钮"
+    priority="100"
+    extensions="ditamap"
+    mainSchema="urn:oasis:names:tc:dita:xsd:map.xsd:1.3">
+
+    <!-- 引用你的 jar 包 -->
+    <classPath>
+        <entry>${framework}/oxygen-lock-plugin-1.0.0.jar</entry>
+    </classPath>
+
+    <!-- 定义自定义操作（Action） -->
+    <actions>
+        <action
+            id="lockMapAction"
+            name="加锁/解锁 Map"
+            class="com.example.oxygenplugin.lock.LockMapAction"/>
+    </actions>
+
+    <!-- 工具栏按钮 -->
+    <authorToolbar>
+        <action ref="lockMapAction"/>
+    </authorToolbar>
+
+    <!-- 菜单栏按钮（可选） -->
+    <authorMenu>
+        <menu name="自定义操作">
+            <action ref="lockMapAction"/>
+        </menu>
+    </authorMenu>
+</documentTypeAssociation>
